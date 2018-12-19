@@ -55,6 +55,12 @@
         context.arc(ballX, ballY, BALL_RADIUS, 0, 2 * Math.PI, true);
         context.closePath();
         context.fill();
+          // Actually draw the ball
+        context.beginPath();
+        context.fillStyle = BALL_COLOR2;
+        context.arc(ballX2, ballY2, BALL_RADIUS, 0, 2 * Math.PI, true);
+        context.closePath();
+        context.fill();
       }
       /**
        * This function is meant to be the refreshing drawing function. It gets the
