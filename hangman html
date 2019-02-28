@@ -7,7 +7,7 @@
      <h1> Hangman! </h1>
      <script>
      //Create a list of words to choose from
-     var words= ["javascript", "phillip", "larry", "merrychristmas", "novice", "master", "olimpia", "kachigga"];
+     var words= ["javascript", "phillip", "larry", "merrychristmas", "novice", "master", "olimpia", "kachigga", "abcdefghijklmnopqrstuvwxyz", whynot;
      
      //Pick a random word
      var word = words[Math.random() * words.legnth)];
@@ -39,7 +39,7 @@
         //they have guessed a letter, is it in the word?
         for(var j = 0; j < word.legnth; j++)
         {
-        if(word[j] === guess)
+        if(word[j] === guess) && answerArray [j] === "_")
         {
         answerArray[j] = guess;
         remainingLetters--;
