@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html>
 
+  <head>
+    <title>Interactive Programming</title>
+  </head>
+  
+  <body>
+    <h1 id="heading">Hello World!</h1>
+    
+    <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
+    
+    <script>
+      
+      var leftOffset = 0;
+      
+      var moveHeading = function()
+      {
+        $("#heading").offset({left: leftOffset}); //set the left offset
+        
+        leftOffset++; // update (add to) leftOffset variable
+        
+        if(leftOffset > 200)
+        {
+          leftOffset = 0; //send back to the beginning (left of page)
+        }
+        
+      };
+      
+      setInterval(moveHeading, 30); // remember 1000 is 1 second
+      
+      var clickHandler = function(event)
+        {
+           $("body").append("<p>Click! " + event.pageX 
+                            + " " + event.pageY+"</p>");
+        };
+      $("body").click(clickHandler);
+      
+      $("html").mousemove(function(event)
+      {
+        $("#heading").offset({
+          left: event.pageX,
+          top: event.pageY
+        });
+      });
+      
+    </script>
+  </body>
+  
+</html>
