@@ -38,10 +38,14 @@
       }
       var clicks = 0;
       $("#map").click(function (event){
-        // Click handler code goes here
-        // check if they are close enough to find the tressure
-        // if they have 'found it' tell them how many clicks it took
-        // give a hint if they are too far away
+
+<ClickHandler
+    Clicking="{true | false}"
+    Command="ICommand object"
+    HandleEnterSpaceKeys="{true | false}"
+    HandlePrimaryMouseButton="{true | false}"
+    HandlerStage="{Bubbled | Direct | Routed}"
+/>
         clicks++;
       });
     </script>
