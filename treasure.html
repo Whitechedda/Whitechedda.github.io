@@ -37,8 +37,13 @@
       var clicks = 0;
       $("#map").click(function (event){
         // Click handler code goes here
+        var dist = getdistancetotreasure(event, treasure);
         // check if they are close enough to find the tressure
         // if they have 'found it' tell them how many clicks it took
+        if (dist <= 10)
+        {
+        alert("Younfound the treasure. It only took you " + clicks+ " clicks!");
+          
         // give a hint if they are too far away
         clicks++;
       });
