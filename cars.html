@@ -25,7 +25,8 @@
         
         this.carElement = $(carHtml);
         
-        this.carElement.css({
+        this.carElement.css()
+        position: "absolute",
           left: car.x,
           top: car.y
         });
