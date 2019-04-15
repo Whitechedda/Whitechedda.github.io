@@ -19,11 +19,11 @@
       var tesla = new Car(10,20); // x=10, y=20
       
       // Let's create a method to draw a car
-      var drawCar = function(car)
+      Car.prototype.draw = function()
       {
         var carHtml = '<img src="https://nostarch.com/images/car.png">';
         
-        var carElement = $(carHtml);
+        this.carElement = $(carHtml);
         
         carElement.css({
           position: "absolute",
@@ -31,7 +31,7 @@
           top: car.y
         });
         
-        $("body").append(carElement);
+        $("body").append(this.carElement);
       };
             Car.prototype.moveRight = function()
       {
