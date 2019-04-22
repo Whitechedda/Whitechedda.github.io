@@ -1,4 +1,5 @@
-<DOCTYPE html>
+
+<!DOCTYPE html>
 <html>
 <head>
 <title>Canvas</title>
@@ -8,8 +9,23 @@
 
 <script>
 var canvas = document.getElementById("canvas"); // look for canvas
-var ctx = canvas.getContext("2d"); // tells javascript that the drawing will be 2 dimensional
+var ctx = canvas.getContext("2d"); // tells javascript that the drawing will be 2 dimensional 
   for(var i = 0; i < 5; i++)
-ctx.fillRect(i*20, i*20, 10, 20); // draw and fill a rectangle, at (0,0) with sides of length 10 and 20
+  
+    ctx.fillStyle="purple";
+  ctx.fillRect(0, 0, 133, 400);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(133, 0, 133, 400);
+    ctx.fillStyle="pink";
+  ctx.fillRect(266, 0, 133, 400);
+  
+  ctx.fillStyle="blue";
+ctx.fillRect(100, 0, 50, 50); 
+ctx.fillRect(115, 50, 20, 20);  
+ctx.fillRect(25, 70, 200, 17);
+ctx.fillRect(87, 70, 75, 95);
+ ctx.fillRect(87, 97, 8, 10);
+  
+</script>
 </body>
 </html>
