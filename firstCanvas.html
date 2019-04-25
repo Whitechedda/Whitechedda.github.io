@@ -1,24 +1,55 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<title>Canvas</title>
+<title>hangman!</title>
 </head>
 <body>
-<canvas id="canvas" width="400" height="400"></canvas>
-
+<h1> hangman! </h1>
+  <a href="index.html"">home</a>
 <script>
-var canvas = document.getElementById("canvas"); // look for canvas
-var ctx = canvas.getContext("2d"); // tells javascript that the drawing will be 2 dimensional 
-  for(var i = 0; i < 5; i++)
-  
-    ctx.fillStyle="purple";
-  ctx.fillRect(0, 0, 133, 400);
-  ctx.fillStyle="yellow";
-  ctx.fillRect(133, 0, 133, 400);
-    ctx.fillStyle="pink";
-  ctx.fillRect(266, 0, 133, 400);
-  
+//create a list of words to choose from
+var words = ["hilarious", "reading", "geometry", "pancake", "waffle", "spaghetti", "purple", "candy", "pony"];
+
+//pick a random word
+var word = words[Math.floor(Math.random() *words.length)];
+
+//set up an array of the answer (will hold blanks)
+var answerArray = [];
+for(var i = 0; i < word.length; i++)
+{
+answerArray[i] = "_";
+}
+
+var remainingLetters = word.length;
+
+//the game loop
+while (remainingLetters > 0)
+{
+//show palyers their progress
+alert(answerArray.join(" "));
+
+//get a guess from the player
+var guess = prompt("please guess a single letter");
+if (guess === null)
+{
+//quit
+break;
+}else if(guess.length !== 1)
+{
+alert("you must enter only a SINGLE letter!");
+}else{
+//they have guessed a letter, is it in the word?
+for(var j = 0; j < word.length; j++)
+{
+if(word[j] === guess && answerArray[j] === "_")
+{
+answerArray[j] = guess;
+remainingLetters--;
+}
+}
+}
+}
+alert("good job! the answer was " + word);
 </script>
 </body>
 </html>
